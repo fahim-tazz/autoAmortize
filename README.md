@@ -12,6 +12,7 @@ cd autoAmortize
 ```
 
 2. **Set Up the Environment**
+
    We recommend using a virtual environment:
 
 ```bash
@@ -34,7 +35,7 @@ python main.py --path path/to/your/file.xlsx
 ```
 
 - The script supports `.xlsx`, `.xls`, and `.csv` formats.
-- Month columns must be properly formatted or recognizable (e.g., `May24`, `15/05/2024`, `May-2024`, etc.). US-style formats `Month-Date-Year` are not supported.
+- Month columns must be reasonably formatted or recognizable (e.g., `May24`, `15/05/2024`, `May-2024`, etc.). US-style formats `Month-Date-Year` are not supported.
 
 ## Output
 
@@ -47,6 +48,7 @@ You can modify the script to:
 
 - Adjust column keywords (e.g., `"Items"`, `"Invoice number"`, etc.)
 - Tweak output format as needed for your accounting platform
+- Hardcode ledger codes for Prepayments (and Expenses, if appropriate for your use case).
 
 Created by [@fahim-tazz](https://github.com/fahim-tazz)
 
@@ -77,4 +79,4 @@ To ensure the accounting entries are correct:
 - For each unique expense type (e.g., Web Hosting, Insurance), the script prompts the user individually for the corresponding **Expense Ledger Code** (e.g. Insurance Expense Ledger).
 - This separation ensures accuracy in accounting records since the amortization schedule does not include ledger codes explicitly.
 
-While prompting for expense ledger codes per-item may be slightly tedious, this design guarantees that all accounting entries are sent to the right account in the user's system based on user-confirmed inputs.
+While prompting for expense ledger codes per-item may be slightly tedious for the user, this design guarantees that all accounting entries are sent to the right account in the user's system based on user-confirmed inputs, especially since the expense ledger codes are not provided in the amortization schedule.
