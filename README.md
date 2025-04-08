@@ -1,4 +1,4 @@
-# DoubleEntryPro
+# AutoAmortize
 
 AutoAmortize is a Python script for processing amortization schedules from Excel or CSV files and generating double-entry accounting records automatically.
 
